@@ -124,21 +124,48 @@
         // 해체분석기`바지${pants} 양말${socks}`
 
 
-        /* spread operater + apply&call*/
-        var person = {
-            인사 : function(greeting, itj){
-            console.log(this.name+ greeting + itj)
-            }
-        }
+        /** spread operater + apply&call*/
+
+        // var person = {
+        //     인사 : function(greeting, itj){
+        //     console.log(this.name+ greeting + itj)
+        //     }
+        // }
         
-        var person2 = {
-            name : '박준겸'
-        }
+        // var person2 = {
+        //     name : '박준겸'
+        // }
 
-        person.인사.apply(person2, ['반가워', '헣'])
-        person.인사.call(person2, '반가워', '헣')
+        // person.인사.apply(person2, ['반가워', '헣'])
+        // person.인사.call(person2, '반가워', '헣')
+        
+        /**default parameter/arguments*/
 
+        // function 임시함수() {
+        //     return 10;
+        // }
+        // 임시함수()
 
+        // function 더하기(a,b = 임시함수()) {
+        //     console.log(a+b)
+        // }
+
+        // 더하기(3)
+
+        /** argument */
+        
+        // function 함수(a,b,c,d,e,f,g,h,i) {
+        //     for(let i=0; i < arguments.length; i++) {
+        //         console.log(arguments[i])
+        //     }
+            
+        // }
+
+        // 함수(1,2,3,4,5,6,7,8,9)
+
+        // 근데 arguments는 옛날 문법이고.. 요즘은 rest 파라미터 씀
+
+        /** rest 파라미터 */
 
     </script>
 
