@@ -298,22 +298,49 @@
 
         /**ES6 상속기능*/
 
-        class 부모 {
-            constructor(){
-                this.name = 'Kim';
-            }
-            sayHi() {
-                console.log('Hello')
-            }
+        // class 부모 {
+        //     constructor(){
+        //         this.name = 'Kim';
+        //     }
+        //     sayHi() {
+        //         console.log('Hello')
+        //     }
             
-        }
+        // }
         
 
-        var 자식 = new 부모();
+        // var 자식 = new 부모();
 
-        자식.__proto__;
-        Object.getPrototypeOf(자식);
+        // 자식.__proto__;
+        // Object.getPrototypeOf(자식);
 
+        /** extent/super */
+
+        class 할아버지 {
+            constructor(name) {
+                this.성 = 'Kim'
+                this.이름 = name;
+            }
+            sayHi() {
+                console.log('안녕 저는 할아버지에요')
+            }
+        }
+
+        var 할아버지1 = new 할아버지('만덕')
+
+        class 아버지 extends 할아버지 {
+            constructor(name) {
+                super(name);
+                this.나이 = 50;
+            }
+            sayHi() {
+                console.log('안녕 저는 아버지에요')
+                super.sayHi()
+            }
+
+        }
+
+        var 아버지1 = new 아버지('만식');
 
 
 
