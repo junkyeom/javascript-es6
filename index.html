@@ -287,15 +287,36 @@
 
         /**ES5 상속기능*/
         
-        var 부모 = { name : 'kim', age : 50};
+        // var 부모 = { name : 'kim', age : 50};
 
-        var 자식 = Object.create(부모);
+        // var 자식 = Object.create(부모);
         
-        자식.age = 20;
+        // 자식.age = 20;
 
-        var 손자 = Object.create(자식)
+        // var 손자 = Object.create(자식)
 
+
+        /**ES6 상속기능*/
+
+        class 부모 {
+            constructor(){
+                this.name = 'Kim';
+            }
+            sayHi() {
+                console.log('Hello')
+            }
+            
+        }
         
+
+        var 자식 = new 부모();
+
+        자식.__proto__;
+        Object.getPrototypeOf(자식);
+
+
+
+
     </script>
 
 
