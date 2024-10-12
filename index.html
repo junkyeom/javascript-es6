@@ -316,33 +316,74 @@
 
         /** extent/super */
 
-        class 할아버지 {
-            constructor(name) {
-                this.성 = 'Kim'
-                this.이름 = name;
+        // class 할아버지 {
+        //     constructor(name) {
+        //         this.성 = 'Kim'
+        //         this.이름 = name;
+        //     }
+        //     sayHi() {
+        //         console.log('안녕 저는 할아버지에요')
+        //     }
+        // }
+
+        // var 할아버지1 = new 할아버지('만덕')
+
+        // class 아버지 extends 할아버지 {
+        //     constructor(name) {
+        //         super(name);
+        //         this.나이 = 50;
+        //     }
+        //     sayHi() {
+        //         console.log('안녕 저는 아버지에요')
+        //         super.sayHi()
+        //     }
+
+        // }
+
+        // var 아버지1 = new 아버지('만식');
+
+
+        /** getter/setter */
+
+
+        class 사람 {
+            constructor() {
+                this.name = 'Park'
+                this.age = 20;
             }
-            sayHi() {
-                console.log('안녕 저는 할아버지에요')
+            get nextAge() {
+                return this.age + 1
             }
+            set setAge(age) {
+                this.age = age
+            }
+            
         }
 
-        var 할아버지1 = new 할아버지('만덕')
+        var 사람1 = new 사람();
+        사람1.setAge = 1234567;
+        
 
-        class 아버지 extends 할아버지 {
-            constructor(name) {
-                super(name);
-                this.나이 = 50;
-            }
-            sayHi() {
-                console.log('안녕 저는 아버지에요')
-                super.sayHi()
-            }
+        // var 사람 = {
+        //     name : 'Park',
+        //     age : 30,
+        //     get nextAge() {
+        //         return this.age + 1
+        //     },
+        //     set setAge(age) {
+        //         this.age = parseInt(age);
+        //     }
+        // }
 
-        }
+        // 사람.setAge = '20';
+        // 사람.nextAge;
+        
 
-        var 아버지1 = new 아버지('만식');
+        
 
 
+
+    ;
 
     </script>
 
