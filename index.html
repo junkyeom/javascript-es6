@@ -346,22 +346,22 @@
         /** getter/setter */
 
 
-        class 사람 {
-            constructor() {
-                this.name = 'Park'
-                this.age = 20;
-            }
-            get nextAge() {
-                return this.age + 1
-            }
-            set setAge(age) {
-                this.age = age
-            }
+        // class 사람 {
+        //     constructor() {
+        //         this.name = 'Park'
+        //         this.age = 20;
+        //     }
+        //     get nextAge() {
+        //         return this.age + 1
+        //     }
+        //     set setAge(age) {
+        //         this.age = age
+        //     }
             
-        }
+        // }
 
-        var 사람1 = new 사람();
-        사람1.setAge = 1234567;
+        // var 사람1 = new 사람();
+        // 사람1.setAge = 1234567;
         
 
         // var 사람 = {
@@ -379,11 +379,74 @@
         // 사람.nextAge;
         
 
+        /** class~getter/setter 예제 */
         
+        // class Dog {
+        //     constructor(type, color) {
+        //         this.type = type;
+        //         this.color = color;
+        //     }
+        //     한살먹기() {
+        //         if(this instanceof Cat) {
+        //             this.age++
+        //             // instanceof => a가 b의 인스턴스인지 확인해줌
+        //         }
+        //     }
+        // }
+
+
+        // class Cat extends Dog {
+        //     constructor(type, color, age) {
+        //         super(type, color);
+        //         this.age = age;
+        //     }
+        // }
+
+        // var 강아지1 = new Dog('말티즈', 'white')
+        // var 강아지2 = new Dog('진돗개', 'brown')
+
+        // var 고양이1 = new Cat('코숏','white', 5);
+        // var 고양이2 = new Cat('러시안블루','brown', 2);
+
+        
+        // class Unit {
+        //     constructor() {
+        //         this.공격력 = 5;
+        //         this.체력 = 100;
+        //     }
+        //     get battlePoint() {
+        //         return this.공격력 + this.체력
+        //     }
+        //     set heal(hp) {
+        //         this.체력 += hp;
+        //     }
+        // }
+
+        // var unit = new Unit();
+        // unit.heal = 20;
+
+        var data = {
+            odd : [],
+            even : [],
+            setter(...rest) {
+                rest.forEach((a)=>{
+                    if(a%2 == 1) {
+                        this.odd.push(a)
+                    } else {
+                        this.even.push(a)
+                    }
+                })
+            },
+            getter() {
+                return [...this.odd, ...this.even].sort((a,b)=>a-b)
+            }
+        }
+
+        data.setter(1,4,7,3,8)
 
 
 
-    ;
+    
 
     </script>
 
