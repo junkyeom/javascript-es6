@@ -501,6 +501,7 @@
         console.log(c)
 
     </script> -->
+    <button>눌러봐</button>
 
     <script>
         /** Promise */
@@ -544,30 +545,46 @@
         //     console.log(r)
         // })
         
-        var PromiseFirst = new Promise((resolve, reject)=>{
-            $.ajax('https://codingapple1.github.io/hello.txt')
-            .done((r)=>{resolve(r)})
-        }) 
+        // var PromiseFirst = new Promise((resolve, reject)=>{
+        //     $.ajax('https://codingapple1.github.io/hello.txt')
+        //     .done((r)=>{resolve(r)})
+        // }) 
 
-        var PromiseSecond = new Promise((resolve, reject)=>{
-            $.ajax('https://codingapple1.github.io/hello2.txt')
-            .done((r2)=>{resolve(r2)})
-        })
+        // var PromiseSecond = new Promise((resolve, reject)=>{
+        //     $.ajax('https://codingapple1.github.io/hello2.txt')
+        //     .done((r2)=>{resolve(r2)})
+        // })
             
 
-        PromiseFirst.then((r)=>{
-            console.log(r)
-            PromiseSecond.then((r2)=>{
-                console.log(r2)
+        // PromiseFirst.then((r)=>{
+        //     console.log(r)
+        //     PromiseSecond.then((r2)=>{
+        //         console.log(r2)
+        //     })
+        // })
+
+        /** async/await */
+        async function 버톤() {
+            var myPromise = new Promise((성공, 실패)=>{
+                document.querySelector('button').addEventListener('click', ()=>{
+                    성공('성공함요');
+                })
             })
-        })
+        
+        try { 
+            var result = await myPromise;
+            console.log(result)
+        
+        } catch { 
+            console.log('잘안되네용')
+        };
+        
+    }
 
-
-
-
-
+        버톤();
 
 
     </script>
+
 </body>
 </html>
