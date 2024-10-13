@@ -501,7 +501,6 @@
         console.log(c)
 
     </script> -->
-    <button>눌러봐</button>
 
     <script>
         /** Promise */
@@ -564,24 +563,95 @@
         // })
 
         /** async/await */
-        async function 버톤() {
-            var myPromise = new Promise((성공, 실패)=>{
-                document.querySelector('button').addEventListener('click', ()=>{
-                    성공('성공함요');
-                })
-            })
+    //     async function 버톤() {
+    //         var myPromise = new Promise((성공, 실패)=>{
+    //             document.querySelector('button').addEventListener('click', ()=>{
+    //                 성공('성공함요');
+    //             })
+    //         })
         
-        try { 
-            var result = await myPromise;
-            console.log(result)
+    //     try { 
+    //         var result = await myPromise;
+    //         console.log(result)
         
-        } catch { 
-            console.log('잘안되네용')
-        };
+    //     } catch { 
+    //         console.log('잘안되네용')
+    //     };
         
+    // }
+
+    //     버톤();
+
+
+
+    /** 반복문 */
+
+
+    // class 부모 {
+
+    // }
+    // 부모.prototype.name = 'Park'
+
+    // var obj = new 부모();
+
+    // var obj = { name : 'kim', age : 30 }
+
+
+    // for(var key in obj) {
+    //         console.log(obj[key])
+    // }
+
+    // for (var key of dd) {
+
+    // }
+
+
+    // var arr = [2,3,4,5]
+
+    // for (var data of ㅇ) {
+    //     console.log(data)
+    // }
+
+    // let 데이터 = [1,2,3,4,5,6,7,8,9] 
+
+    // for (var data1 of 데이터) {
+    //     for (var data2 of 데이터) {
+    //         console.log(`${data1} x ${data2} = ${data1*data2}`)
+    //     }
+    // }
+
+    var products = [
+        {
+            name1 : 'chair',
+            price1 : 7000,
+        },
+        {
+            name2 : 'sofa',
+            price : 5000,
+        },
+        {
+            name1 : 'desk',
+            price3 : 9000,
+        },
+    ]; 
+
+    var newKey;
+    var newValue;
+
+    for (var data of products) {
+        for (var i in data) {
+            if(isNaN(parseInt(i.slice(-1))) == false) {
+                newKey = i.slice(0,-1);
+                newValue = data[i];
+                data[newKey] = newValue;
+                delete data[i];
+                console.log(newKey, newValue)
+            }
+            
+        }
     }
 
-        버톤();
+    console.log(products)
 
 
     </script>
