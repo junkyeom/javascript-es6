@@ -656,33 +656,66 @@
 
     /** Symbol */
 
+    // var symbol = Symbol('설명')
 
-    var symbol = Symbol('설명')
 
+    // var weight = Symbol('몸무게 비밀')
+    // var height = Symbol('키도 비밀')
 
-    var weight = Symbol('몸무게 비밀')
-    var height = Symbol('키도 비밀')
-
-    var obj = { name : 'Park', [weight] : 160 };
+    // var obj = { name : 'Park', [weight] : 160 };
     
-    obj[weight] = 60;
-    obj[height] = 175;
+    // obj[weight] = 60;
+    // obj[height] = 175;
 
-    for (var key in obj) {
-        console.log(obj[key])
+    // for (var key in obj) {
+    //     console.log(obj[key])
+    // }
+
+    // var a = Symbol('설명1')
+    // var b = Symbol('설명1')
+
+    // a===b // false
+
+    // // 전역 심볼
+    // var a = Symbol.for('설명1')
+    // var b = Symbol.for('설명1')
+
+    // var arr = [2,3,4];
+    // arr[Symbol.iterator]
+
+    /** Map/Set */
+
+    var person = new Map();
+    person.set([1,2,3], 'Kim')
+    person.set('age', 20)
+
+    person.get('age')
+    person.delete('age')
+
+    var person2 = new Map([
+        ['name', 'Kim'],
+        ['age', 20]
+    ]);
+
+    for (var key of person.keys()) {
+        console.log(key)
     }
 
-    var a = Symbol('설명1')
-    var b = Symbol('설명1')
+    
+    var 출석부 = ['john', 'tom', 'andy', 'tom']
 
-    a===b // false
+    var 출석부2 = new Set(['john', 'tom', 'andy', 'tom']);
+    
+    출석부2.add('sally')
+    출석부2.add('john')
 
-    // 전역 심볼
-    var a = Symbol.for('설명1')
-    var b = Symbol.for('설명1')
+    출석부2.delete('sally')
+    출석부2.has('sally')
+    출석부2.size
 
-    var arr = [2,3,4];
-    arr[Symbol.iterator]
+    출석부 = [...출석부2];  
+
+
 
 
     </script>
