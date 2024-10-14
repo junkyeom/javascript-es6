@@ -653,9 +653,36 @@
 
     // console.log(products)
 
+
     /** Symbol */
 
+
     var symbol = Symbol('설명')
+
+
+    var weight = Symbol('몸무게 비밀')
+    var height = Symbol('키도 비밀')
+
+    var obj = { name : 'Park', [weight] : 160 };
+    
+    obj[weight] = 60;
+    obj[height] = 175;
+
+    for (var key in obj) {
+        console.log(obj[key])
+    }
+
+    var a = Symbol('설명1')
+    var b = Symbol('설명1')
+
+    a===b // false
+
+    // 전역 심볼
+    var a = Symbol.for('설명1')
+    var b = Symbol.for('설명1')
+
+    var arr = [2,3,4];
+    arr[Symbol.iterator]
 
 
     </script>
