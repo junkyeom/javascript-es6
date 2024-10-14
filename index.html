@@ -620,38 +620,42 @@
     //     }
     // }
 
-    var products = [
-        {
-            name1 : 'chair',
-            price1 : 7000,
-        },
-        {
-            name2 : 'sofa',
-            price : 5000,
-        },
-        {
-            name1 : 'desk',
-            price3 : 9000,
-        },
-    ]; 
+    // var products = [
+    //     {
+    //         name1 : 'chair',
+    //         price1 : 7000,
+    //     },
+    //     {
+    //         name2 : 'sofa',
+    //         price : 5000,
+    //     },
+    //     {
+    //         name1 : 'desk',
+    //         price3 : 9000,
+    //     },
+    // ]; 
 
-    var newKey;
-    var newValue;
+    // var newKey;
+    // var newValue;
 
-    for (var data of products) {
-        for (var i in data) {
-            if(isNaN(parseInt(i.slice(-1))) == false) {
-                newKey = i.slice(0,-1);
-                newValue = data[i];
-                data[newKey] = newValue;
-                delete data[i];
-                console.log(newKey, newValue)
-            }
+    // for (var data of products) {
+    //     for (var i in data) {
+    //         if(isNaN(parseInt(i.slice(-1))) == false) {
+    //             newKey = i.slice(0,-1);
+    //             newValue = data[i];
+    //             data[newKey] = newValue;
+    //             delete data[i];
+    //             console.log(newKey, newValue)
+    //         }
             
-        }
-    }
+    //     }
+    // }
 
-    console.log(products)
+    // console.log(products)
+
+    /** Symbol */
+
+    var symbol = Symbol('설명')
 
 
     </script>
