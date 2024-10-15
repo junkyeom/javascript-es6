@@ -721,29 +721,56 @@
 
     
 
+    // class 클래스 extends HTMLElement {
+    //     connectedCallback() {
+    //         // let 변수 = document.createElement('label');
+    //         // this.appendChild(변수)
+    //         let name = this.getAttribute('name')
+    //         this.innerHTML = `<label>${name}</label><input>
+    //         <style> label { color : red }<style/>`
+    //     }
+    //     static get observedAttributes() {
+    //         return ['name']
+    //     }
+    //     attributeChangedCallback() {
+    //         this.innerHTML = `<label>${name}</label><input>`
+    //     }
+    // }
+
+    // customElements.define('custom-input', 클래스);
+    
+    </script>
+
+        <template id="template1">
+            <label>안녕하세요</label><input>
+            <style> label { color : red }</style>
+        </template>
+
+        <custom-input name="이메일임"></custom-input>
+        <custom-input name="비밀번호"></custom-input>
+
+    <script>
+
+    /** shadow DOM */
+
     class 클래스 extends HTMLElement {
         connectedCallback() {
-            // let 변수 = document.createElement('label');
-            // this.appendChild(변수)
+            this.attachShadow({ mode : 'open' })
             let name = this.getAttribute('name')
-            this.innerHTML = `<label>${name}</label><input>`
-        }
-        static get observedAttributes() {
-            return ['name']
-        }
-        attributeChangedCallback() {
-            this.innerHTML = `<label>${name}</label><input>`
+            this.shadowRoot.append(template1.content.cloneNode(true))
+            this.shadowRoot.querySelector('label').addEventListener('click', ()=>{console.log('라벨 누름')})
         }
     }
 
     customElements.define('custom-input', 클래스);
 
-    
+
 
     </script>
 
-    <custom-input name="이메일임"></custom-input>
-    <custom-input name="비밀번호"></custom-input>
+
+
+
 
 </body>
 </html>
